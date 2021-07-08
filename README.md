@@ -5,7 +5,7 @@ This project sets up a framework for comparing the accuracy / utility of transfo
 The motivation for this project:
 * How much utility is there with fine tune training a transformer using a large single-person text corpus?
 * Since public use of GPT-3 doesn't allow fine tune training on large
-  texts, I'll focus on other publically available models and see their
+  texts, I'll focus on other publicly available models and see their
   limits for this application.
 * How does GPT-2 compare to GPT-J-6B, GPT-Neo?
 
