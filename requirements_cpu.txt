@@ -1,0 +1,15 @@
+matplotlib==2.0.2
+#numpy==1.20.2
+#pandas>=1.1.0
+# matches python3.6 env for pytorch-training:1.8.1-gpu-py36-cu111-ubuntu18.04 :
+numpy==1.19.1
+pandas==1.1.5
+git+https://github.com/huggingface/transformers
+pyarrow==4.0.1
+torch==1.8.1
+python-docx
+mlflow==1.18.0
+pytorch-lightning
+boto3==1.17.104
+backoff==1.10.0
+requests==2.25.1

@@ -1,0 +1,19 @@
+FROM ubuntu:focal
+ARG DEBIAN_FRONTEND=noninteractive
+ARG MLFLOW_ARTIFACTS_URI
+
+RUN apt-get update && apt-get install -y emacs-nox wget python3 python3-pip python3-psycopg2
+
+RUN python3 -m pip install --upgrade pip
+ADD requirements.txt /
+RUN python3 -m pip install -r /requirements.txt && rm -rf /root/.cache/pip/*
+
+EXPOSE 5000
+
+ENV MLFLOW_ARTIFACTS_URI=$MLFLOW_ARTIFACTS_URI
+
+ENTRYPOINT mlflow server \
+    --backend-store-uri sqlite:///shared_vol/mlflow.db \
+    --default-artifact-root $MLFLOW_ARTIFACTS_URI \
+    --host 0.0.0.0 \
+    --port 5000

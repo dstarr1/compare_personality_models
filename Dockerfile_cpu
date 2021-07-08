@@ -1,0 +1,8 @@
+FROM python:3.6
+
+RUN apt-get update && apt-get install -y emacs-nox elpa-markdown-mode jq less
+
+RUN pip install --upgrade pip
+ADD requirements_cpu.txt /
+RUN pip install -r /requirements_cpu.txt && rm -rf /root/.cache/pip/*
+
